@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { colors, outlines } from '../../styles/colors';
 import { font, typography } from '../../styles/typography';
@@ -26,16 +26,17 @@ export const Label = styled.label`
 
 export const StyledInput = styled.input`
   border: none;
-  border: 1px solid ${colors.blue};
-  border-radius: 10px;
-  padding: 0.5rem;
   outline: none;
   ${font.secondary}
   ${typography.text.sm}
+  width: 100%;
+`;
 
-  &:focus {
-    animation: ${inputAnimation};
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-  }
+export const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid ${colors.blue};
+  border-radius: 10px;
+  padding: 0.5rem;
 `;

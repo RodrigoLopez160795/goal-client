@@ -1,4 +1,5 @@
 import { Formik } from 'formik';
+import { useState } from 'react';
 import Button from '../Button';
 import Error from '../Error';
 import Input from '../Input';
@@ -49,6 +50,8 @@ function Login() {
               value={values.email_username}
               onChange={handleChange}
               onBlur={handleBlur}
+              icon={true}
+              iconType='user'
             />
             {errors.password && touched.password && (
               <Error error={errors.password} />
@@ -61,6 +64,8 @@ function Login() {
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
+              icon={true}
+              iconType='password'
             />
             <Button type='submit' text='Send' btnType='secondary' size='l' />
           </FormWrapper>

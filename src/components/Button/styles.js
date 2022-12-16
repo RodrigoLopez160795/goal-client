@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { colors } from '../../styles/colors';
 import { font } from '../../styles/typography';
 
-const handleButton = (type) => {
+function handleButton(type) {
   switch (type) {
     case 'primary':
       return `background-color:${colors.lightBlue};
@@ -27,8 +27,8 @@ const handleButton = (type) => {
           }
         `;
   }
-};
-const handleSize = (size) => {
+}
+function handleSize(size) {
   switch (size) {
     case 's':
       return `
@@ -49,7 +49,7 @@ const handleSize = (size) => {
         padding: 16px 24px;
         `;
   }
-};
+}
 export const Wrapper = styled.button`
   margin: auto;
   display: flex;
