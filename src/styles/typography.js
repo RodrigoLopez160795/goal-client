@@ -9,5 +9,6 @@ export const typography = {
   },
   title: {
     md: 'font-size:1.5rem; line-height:2.25rem;',
+    lg: 'font-size:2.25rem; line-height:3rem;',
   },
 };

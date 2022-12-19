@@ -1,11 +1,15 @@
 import { Formik } from 'formik';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { UserContext } from '../../context/UserContext';
+import { login } from '../../services/sessions';
 import Button from '../Button';
 import Error from '../Error';
 import Input from '../Input';
 import { FormWrapper, Title, Wrapper } from './styles';
 
 function Login() {
+  const [invalid, setInvalid] = useState(false);
+  const { setUser } = useContext(UserContext);
   return (
     <Wrapper>
       <Title>Login</Title>
@@ -30,6 +34,26 @@ function Login() {
             errors.password = 'Password should be at least 6 characters';
           return errors;
         }}
+        onSubmit={(e) => {
+          let credentials = {};
+          if (e.email_username.includes('@')) {
+            credentials = {
+              email: e.email_username,
+              password: e.password,
+            };
+          } else {
+            credentials = {
+              username: e.email_username,
+              password: e.password,
+            };
+          }
+          login(credentials)
+            .then((data) => setUser(data))
+            .catch(() => {
+              setInvalid('Invalid credentials');
+              setTimeout(() => setInvalid(false), 2000);
+            });
+        }}
       >
         {({
           values,
@@ -39,10 +63,11 @@ function Login() {
           handleBlur,
           handleSubmit,
         }) => (
-          <FormWrapper>
+          <FormWrapper onSubmit={handleSubmit}>
             {errors.email_username && touched.email_username && (
               <Error error={errors.email_username} />
             )}
+            {invalid && <Error error={invalid} />}
             <Input
               label='Email or username'
               name='email_username'

@@ -35,27 +35,37 @@ function handleSize(size) {
         height: 32px;
         width: 145px;
         padding: 4px 8px;
+        border-radius: 20px;
             `;
     case 'm':
       return `
         height: 40px;
         width: 161px;
         padding: 8px 16px;
+        border-radius: 20px;
         `;
     case 'l':
       return `
         height: 56px;
         width: 177px;
         padding: 16px 24px;
+        border-radius: 20px;
         `;
+    case 'rounded':
+      return `
+          height: 40px;
+          width:40px;
+          padding: .5rem;
+          border-radius: 50px;
+          `;
   }
 }
 export const Wrapper = styled.button`
   margin: auto;
   display: flex;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
   font-weight: 700;
   ${font.secondary}
   ${({ btnType }) => handleButton(btnType)};
