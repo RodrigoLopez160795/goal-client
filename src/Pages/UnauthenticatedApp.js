@@ -1,12 +1,15 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import App from '../App';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from '../components/Login';
 
 function UnauthenticatedApp() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/login');
+  }, []);
+
   return (
     <Routes>
-      <Route index element={<Login />} />
       <Route path='/login' element={<Login />} />
       <Route path='*' element={<p>No lo encuentro</p>} />
     </Routes>

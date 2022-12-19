@@ -21,3 +21,23 @@ export async function login(credentials) {
   sessionStorage.setItem(tokenKey, user.token);
   return user;
 }
+
+export async function logout() {
+  const token = sessionStorage.getItem(tokenKey);
+  const response = await fetch(`${BASE_URI}/logout`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${token}`,
+    },
+  });
+  let data;
+  if (!response.ok) {
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw new Error(response.status);
+    }
+    throw new Error(data.error);
+  }
+  sessionStorage.removeItem(tokenKey);
+}

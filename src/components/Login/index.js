@@ -1,5 +1,6 @@
 import { Formik } from 'formik';
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { login } from '../../services/sessions';
 import Button from '../Button';
@@ -10,6 +11,7 @@ import { FormWrapper, Title, Wrapper } from './styles';
 function Login() {
   const [invalid, setInvalid] = useState(false);
   const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <Title>Login</Title>
@@ -48,7 +50,10 @@ function Login() {
             };
           }
           login(credentials)
-            .then((data) => setUser(data))
+            .then((data) => {
+              setUser(data);
+              navigate('/monthly-goals');
+            })
             .catch(() => {
               setInvalid('Invalid credentials');
               setTimeout(() => setInvalid(false), 2000);

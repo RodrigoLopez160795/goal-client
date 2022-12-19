@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { tokenKey } from './components/config';
 import Loader from './components/Loader';
 import { UserContext } from './context/UserContext';

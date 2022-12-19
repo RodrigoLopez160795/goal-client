@@ -12,9 +12,10 @@ function Button({
   size = 's',
   btnType = 'primary',
   icon,
+  handler = null,
 }) {
   return (
-    <Wrapper type={type} btnType={btnType} size={size}>
+    <Wrapper type={type} btnType={btnType} size={size} onClick={handler}>
       {icon && Icons[icon]}
       {text}
     </Wrapper>
@@ -27,5 +28,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(['s', 'm', 'l', 'rounded']),
   btnType: PropTypes.oneOf(['primary', 'secondary']),
   icon: PropTypes.oneOf(['logout']),
+  handler: PropTypes.func,
 };
 export default Button;

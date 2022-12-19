@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '../../styles/colors';
+import { font } from '../../styles/typography';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ export const AsideItem = styled.div`
   padding: 0.5rem 1rem;
   border-radius: 0px 51px 51px 0px;
   position: relative;
+  ${font.secondary}
 
   &:hover {
     background-color: ${colors.lightBlue};
@@ -32,7 +34,8 @@ export const AsideItem = styled.div`
   &:before {
     content: '';
     position: absolute;
-    background-color: ${colors.pink};
+    background-color: ${({ location, current }) =>
+      location === current ? colors.pink : ''};
     height: 100%;
     width: 7px;
     top: 0;
