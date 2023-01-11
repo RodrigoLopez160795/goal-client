@@ -1,2 +1,2 @@
-export const BASE_URI = 'http://127.0.0.1:3000';
+export const BASE_URI = 'https://goal-api-production-5568.up.railway.app/';
 export const tokenKey = 'user-token';

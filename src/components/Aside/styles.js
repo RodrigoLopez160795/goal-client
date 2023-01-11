@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 15%;
-  height: calc(100vh - 88px);
+  height: calc(100vh - 107.19px);
   color: white;
-  background-color: ${colors.nav};
+  background-color: ${colors.purple};
   border-right: 2px solid black;
   padding: 1rem 0;
 `;
@@ -35,10 +35,15 @@ export const AsideItem = styled.div`
     content: '';
     position: absolute;
     background-color: ${({ location, current }) =>
-      location === current ? colors.pink : ''};
+      location === current ? colors.blue : ''};
     height: 100%;
     width: 7px;
     top: 0;
     left: 0;
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;

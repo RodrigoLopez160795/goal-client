@@ -6,7 +6,7 @@ import { login } from '../../services/sessions';
 import Button from '../Button';
 import Error from '../Error';
 import Input from '../Input';
-import { FormWrapper, Title, Wrapper } from './styles';
+import { ButtonWrapper, FormWrapper, Title, Wrapper } from './styles';
 
 function Login() {
   const [invalid, setInvalid] = useState(false);
@@ -97,7 +97,9 @@ function Login() {
               icon={true}
               iconType='password'
             />
-            <Button type='submit' text='Send' btnType='secondary' size='l' />
+            <ButtonWrapper>
+              <Button type='submit' text='Send' btnType='secondary' size='l' />
+            </ButtonWrapper>
           </FormWrapper>
         )}
       </Formik>

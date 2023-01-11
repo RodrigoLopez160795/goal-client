@@ -24,10 +24,16 @@ export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: center;
 `;
 
 export const Title = styled.p`
   ${typography.title.md}
   font-weight: 900;
   text-align: center;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;

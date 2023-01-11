@@ -22,8 +22,8 @@ function App() {
     }
   }, []);
   return (
-    <BrowserRouter>
-      <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser }}>
+      <BrowserRouter>
         {isLoading ? (
           <Loader />
         ) : user ? (
@@ -31,8 +31,8 @@ function App() {
         ) : (
           <UnauthenticatedApp />
         )}
-      </UserContext.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </UserContext.Provider>
   );
 }
 

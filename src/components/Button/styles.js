@@ -26,6 +26,31 @@ function handleButton(type) {
             transition: all .25s linear;
           }
         `;
+    case 'cancel':
+      return `
+        background-color:${colors.error};
+        border: 1px solid red;
+        color:white;
+        &:hover{
+          background-color:red;
+          transform: scale(1.1);
+          font-size: 1.2rem;
+          transition:all .25s ease;
+        }
+        `;
+    case 'accept':
+      return `
+        background-color:${colors.accept};
+        border: 1px solid green;
+        color:white;
+        &:hover{
+          background-color:green;
+          color:white;
+          transform: scale(1.1);
+          font-size: 1.2rem;
+          transition:all .25s ease;
+        }
+        `;
   }
 }
 function handleSize(size) {
@@ -61,7 +86,6 @@ function handleSize(size) {
   }
 }
 export const Wrapper = styled.button`
-  margin: auto;
   display: flex;
   gap: 0.5rem;
   align-items: center;

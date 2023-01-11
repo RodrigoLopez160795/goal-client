@@ -4,7 +4,7 @@ import { typography } from '../../styles/typography';
 
 export const Wrapper = styled.div`
   padding: 0.5rem 1rem;
-  background-color: ${colors.nav};
+  background-color: ${colors.purple};
   display: flex;
   color: white;
   border-bottom: 2px solid black;
@@ -29,4 +29,15 @@ export const Faces = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 50px;
+`;
+
+export const FacesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    ${typography.text.sm}
+  }
 `;

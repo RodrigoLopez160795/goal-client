@@ -7,7 +7,7 @@ export const colors = {
   purple: 'rgb(201,153,175)',
   background: 'rgb(245,245,245)',
   error: 'rgb(237,67,55)',
-  nav: 'rgb(81,98,205)',
+  accept: 'rgb(108,170,0)',
 };
 
 export const outlines = {
